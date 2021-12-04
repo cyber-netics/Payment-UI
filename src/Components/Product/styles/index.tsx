@@ -22,10 +22,10 @@ export const TextBold = styled.span`
 `;
 
 export const Describe = styled.th`
+  width: 100%;
   padding-top: 0;
   padding-bottom: 0;
   text-align: left;
-  width: 100%;
   font-weight: normal;
 `;
 

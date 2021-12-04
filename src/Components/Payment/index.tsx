@@ -1,20 +1,21 @@
 import React from "react";
 import { Wrapper } from "./styles";
 import { Card, Input, Field } from "exo-ui";
+import { CardNumber, CardName, CardExpiry } from "./elems";
 
 const PaymentCard: React.FC = () => {
   return (
-    <Card title="Cardit card">
+    <Card title="Cardit Card">
       <Wrapper>
         <Field>
-          <Input placeholder="Card number" />
+          <CardNumber />
         </Field>
         <Field>
-          <Input placeholder="Name on card" />
+          <CardName />
         </Field>
         <Field>
-          <Input placeholder="Expiration date" />
-          <Input placeholder="Cvc" />
+          <CardExpiry />
+          <Input placeholder="CVC" />
         </Field>
       </Wrapper>
     </Card>

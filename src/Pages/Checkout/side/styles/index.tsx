@@ -40,7 +40,7 @@ export const Section = styled.div`
 `;
 
 export const Spaceing = styled.div`
-  padding: 5px 0;
+  padding: 4.2px 0;
 `;
 
 export const DescribleItem = styled.th`

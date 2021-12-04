@@ -1,20 +1,17 @@
 import React from "react";
+import { Table, TableRow, Divider } from "exo-ui";
+import { Summary } from "Components/Product";
 import {
   Container,
   Wrapper,
   Section,
   Spaceing,
-  DescribleItem,
   TextBold,
+  DescribleItem,
   TextHighlight,
   Prefix,
   TextFinal,
 } from "./styles";
-import { Table, TableRow, Content, Divider } from "exo-ui";
-import { Summary } from "Components/Product";
-import styled from "styled-components";
-
-export const TextRight = styled(Content)``;
 
 const Side: React.FC = () => (
   <Container>

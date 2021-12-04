@@ -1,100 +1,79 @@
 import React from "react";
-import styled from "styled-components";
+import { FormEvent } from "types";
+import { StripeApi, StripeElem, Elems } from "Api/stripe";
+import { Elements, ElementsConsumer } from "@stripe/react-stripe-js";
 
-import Template from "../../../Templates/Divide";
-import ContactForm from "../../../Forms/Contact";
-import AddressForm from "../../../Forms/Address";
-import SideView from "../side";
-import { Section, Button } from "exo-ui";
-import { ContentBox, OptionBox } from "exo-ui";
+import { Section, ContentBox, OptionBox } from "exo-ui";
+import { Form } from "Components/Form";
 import PaymentCard from "Components/Payment";
-
-const Form = styled.form``;
-
-const FormItem = styled.div`
-  & > div {
-    margin-bottom: 11px;
-  }
-
-  & > div:last-child {
-    margin-top: 12px;
-    margin-bottom: 9px;
-  }
-`;
-
-const NextButton = styled(Button)`
-  min-width: 200px;
-  div {
-    justify-content: center;
-  }
-`;
+import { LargeButton } from "Components/Button";
 
 const PaymentStage: React.FC = () => {
+  const handleSubmit = (event: FormEvent, stripe: StripeElem, elems: Elems) => {
+    event.preventDefault();
+  };
+
   return (
-    <Template
-      step={1}
-      steplist={["Cart", "Information", "Shipping", "Payment"]}
-    >
-      <>
-        {/* <Form> */}
-        <Section>
-          <ContentBox
-            items={[
-              {
-                name: "Contact",
-                body: "example123@gmail.com",
-                action: {
-                  actionName: "Change",
-                  function: () => {
-                    console.log("change...");
+    <Elements stripe={StripeApi.stripePromise}>
+      <ElementsConsumer>
+        {({ stripe, elements }) => (
+          <Form onSubmit={(e) => handleSubmit(e, stripe, elements)}>
+            <Section>
+              <ContentBox
+                items={[
+                  {
+                    name: "Contact",
+                    body: "example123@gmail.com",
+                    action: {
+                      actionName: "Change",
+                      function: () => {
+                        console.log("change...");
+                      },
+                    },
                   },
-                },
-              },
-              {
-                name: "Address",
-                body: "12345 Testing st. Helloworld, CA 913010",
-                action: {
-                  actionName: "Change",
-                  function: () => {
-                    console.log("change...");
+                  {
+                    name: "Address",
+                    body: "12345 Testing st. Helloworld, CA 913010",
+                    action: {
+                      actionName: "Change",
+                      function: () => {
+                        console.log("change...");
+                      },
+                    },
                   },
-                },
-              },
-              {
-                name: "Shipping",
-                body: "Overnight",
-                action: {
-                  actionName: "Change",
-                  function: () => {
-                    console.log("change...");
+                  {
+                    name: "Shipping",
+                    body: "Overnight",
+                    action: {
+                      actionName: "Change",
+                      function: () => {
+                        console.log("change...");
+                      },
+                    },
                   },
-                },
-              },
-            ]}
-          />
-        </Section>
+                ]}
+              />
+            </Section>
 
-        <Section title="Payment">
-          <PaymentCard />
-        </Section>
+            <Section title="Payment">
+              <PaymentCard />
+            </Section>
 
-        <Section title="Billing address">
-          <OptionBox
-            items={[
-              { name: "Regular Shipping", result: "Free" },
-              { name: "Overnight Shipping", result: "$20" },
-            ]}
-          />
-        </Section>
-        <NextButton radius={5} size="large">
-          Next
-        </NextButton>
-        {/* </Form> */}
-      </>
-      <>
-        <SideView />
-      </>
-    </Template>
+            <Section title="Billing address">
+              <OptionBox
+                items={[
+                  { name: "Regular Shipping", result: "Free" },
+                  { name: "Overnight Shipping", result: "$20" },
+                ]}
+              />
+            </Section>
+            <LargeButton radius={5} size="large">
+              Next
+            </LargeButton>
+          </Form>
+        )}
+      </ElementsConsumer>
+    </Elements>
   );
 };
 

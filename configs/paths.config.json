@@ -4,7 +4,9 @@
     "paths": {
       "Components/*": ["./src/Components/*"],
       "Templates/*": ["./src/Templates/*"],
-      "Forms/*": ["./src/Forms/*"]
+      "Forms/*": ["./src/Forms/*"],
+      "Api/*": ["./src/Api/*"],
+      "types": ["./src/types"]
     }
   }
 }

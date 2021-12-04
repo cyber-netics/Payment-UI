@@ -1,41 +1,21 @@
 import React from "react";
-import styled from "styled-components";
-
-import Template from "../../../Templates/Divide";
-import ContactForm from "../../../Forms/Contact";
-import AddressForm from "../../../Forms/Address";
-import SideView from "../side";
-import { Section, Button } from "exo-ui";
-import { ContentBox, OptionBox } from "exo-ui";
-
-const Form = styled.form``;
-
-const FormItem = styled.div`
-  & > div {
-    margin-bottom: 11px;
-  }
-
-  & > div:last-child {
-    margin-top: 12px;
-    margin-bottom: 9px;
-  }
-`;
-
-const NextButton = styled(Button)`
-  min-width: 200px;
-  div {
-    justify-content: center;
-  }
-`;
+import { FormEvent } from "types";
+import { useNavigate } from "react-router-dom";
+import { Section, ContentBox, OptionBox } from "exo-ui";
+import { LargeButton } from "Components/Button";
+import { Form } from "Components/Form";
 
 const ShippingStage: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
+    navigate("/checkout/payment");
+  };
+
   return (
-    <Template
-      step={1}
-      steplist={["Cart", "Information", "Shipping", "Payment"]}
-    >
-      <>
-        {/* <Form> */}
+    <div>
+      <Form onSubmit={handleSubmit}>
         <Section>
           <ContentBox
             items={[
@@ -71,15 +51,12 @@ const ShippingStage: React.FC = () => {
             ]}
           />
         </Section>
-        <NextButton radius={5} size="large">
+
+        <LargeButton radius={5} size="large">
           Next
-        </NextButton>
-        {/* </Form> */}
-      </>
-      <>
-        <SideView />
-      </>
-    </Template>
+        </LargeButton>
+      </Form>
+    </div>
   );
 };
 
