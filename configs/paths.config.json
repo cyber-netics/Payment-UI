@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "Components/*": ["./src/Components/*"],
+      "Templates/*": ["./src/Templates/*"],
+      "Forms/*": ["./src/Forms/*"]
+    }
+  }
+}
