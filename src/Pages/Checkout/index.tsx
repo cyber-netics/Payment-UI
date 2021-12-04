@@ -4,8 +4,9 @@ import Payment from "./stages/Payment";
 import Shipping from "./stages/Shipping";
 import Information from "./stages/Information";
 
-import CheckoutSummary from "./Summary";
 import Template from "../../Templates/Divide";
+import CheckoutSummary from "./Summary";
+import HeaderMenu from "./Menu";
 
 const CheckoutRoutes: React.FC = () => (
   <Routes>
@@ -20,6 +21,7 @@ const CheckoutPage: React.FC = () => {
     <>
       <Template
         active={1}
+        header={<HeaderMenu />}
         steps={["Cart", "Information", "Shipping", "Payment"]}
       >
         <CheckoutRoutes />
