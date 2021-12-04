@@ -1,8 +1,15 @@
 import React from "react";
 import { Breadcrumb } from "exo-ui";
 import SiteLogo from "Components/Logo";
-import { Container, Wrapper, MainView, Header, Body, SideView } from "./styles";
-import { Dropdown } from "exo-ui";
+import {
+  Container,
+  Wrapper,
+  MainView,
+  Header,
+  Body,
+  SideView,
+  Dropdown,
+} from "./styles";
 
 interface LayoutProps {
   active: number;
@@ -20,7 +27,9 @@ const Layout: React.FC<LayoutProps> = (props) => (
           <Breadcrumb active={props.active} steps={props.steps} />
         </Header>
         <Dropdown header={props.header}>
-          <SideView>{props.children && props.children[1]}</SideView>
+          <div style={{ width: "90%", padding: "2.5rem" }}>
+            <>{props.children && props.children[1]}</>
+          </div>
         </Dropdown>
         <Body>{props.children && props.children[0]}</Body>
       </MainView>

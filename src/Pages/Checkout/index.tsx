@@ -6,7 +6,7 @@ import Information from "./stages/Information";
 
 import Template from "../../Templates/Divide";
 import CheckoutSummary from "./Summary";
-import HeaderMenu from "./Menu";
+import HeaderMenu from "./Summary/menu";
 
 const CheckoutRoutes: React.FC = () => (
   <Routes>

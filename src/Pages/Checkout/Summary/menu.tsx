@@ -7,7 +7,7 @@ const OrderBar = styled.div`
   color: #000000;
   display: flex;
   justify-content: space-evenly;
-  padding: 1.3em 0;
+  padding: 2.5px 0;
   background: #fafafa;
   cursor: pointer;
   broder-bottom: 1px solid gray;

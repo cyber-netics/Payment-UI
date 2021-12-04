@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { Dropdown as SmallViewDropdown } from "exo-ui";
 
 const dynamicPadding = css`
   @media only screen and (min-width: 1000px) {
@@ -90,6 +91,12 @@ export const SideView = styled(SideLayout)`
   padding-left: 4%;
   padding-top: 4em;
   @media only screen and (max-width: 1000px) {
+    display: none;
+  }
+`;
+
+export const Dropdown = styled(SmallViewDropdown)`
+  @media only screen and (min-width: 1000px) {
     display: none;
   }
 `;
