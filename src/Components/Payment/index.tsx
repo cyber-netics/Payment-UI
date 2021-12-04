@@ -1,7 +1,7 @@
 import React from "react";
 import { Wrapper } from "./styles";
-import { Card, Input, Field } from "exo-ui";
-import { CardNumber, CardName, CardExpiry } from "./elems";
+import { Card, Field } from "exo-ui";
+import { CardNumber, CardName, CardExpiry, CardCvc } from "./elems";
 
 const PaymentCard: React.FC = () => {
   return (
@@ -15,7 +15,7 @@ const PaymentCard: React.FC = () => {
         </Field>
         <Field>
           <CardExpiry />
-          <Input placeholder="CVC" />
+          <CardCvc />
         </Field>
       </Wrapper>
     </Card>

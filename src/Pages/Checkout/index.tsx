@@ -4,8 +4,16 @@ import Payment from "./stages/Payment";
 import Shipping from "./stages/Shipping";
 import Information from "./stages/Information";
 
-import SideView from "./side";
+import CheckoutSummary from "./Summary";
 import Template from "../../Templates/Divide";
+
+const CheckoutRoutes: React.FC = () => (
+  <Routes>
+    <Route path={"payment"} element={<Payment />} />
+    <Route path={"shipping"} element={<Shipping />} />
+    <Route path={"information"} element={<Information />} />
+  </Routes>
+);
 
 const CheckoutPage: React.FC = () => {
   return (
@@ -14,16 +22,8 @@ const CheckoutPage: React.FC = () => {
         active={1}
         steps={["Cart", "Information", "Shipping", "Payment"]}
       >
-        <>
-          <Routes>
-            <Route path={"payment"} element={<Payment />} />
-            <Route path={"shipping"} element={<Shipping />} />
-            <Route path={"information"} element={<Information />} />
-          </Routes>
-        </>
-        <>
-          <SideView />
-        </>
+        <CheckoutRoutes />
+        <CheckoutSummary />
       </Template>
     </>
   );

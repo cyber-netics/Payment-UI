@@ -37,7 +37,7 @@ export const CardExpiry = () => {
 
 export const CardCvc = () => {
   return (
-    <InputWrapper>
+    <InputWrapper className="testingxxx">
       <CardCvcElement
         options={{
           placeholder: "CVC",
