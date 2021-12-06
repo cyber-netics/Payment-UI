@@ -1,9 +1,10 @@
 import React from "react";
 import { FormEvent } from "types";
 import { useNavigate } from "react-router-dom";
-import { Section, ContentBox, OptionBox } from "exo-ui";
+import { Section } from "exo-ui";
 import { LargeButton } from "Components/Button";
 import { Form } from "Components/Form";
+import { OptionBox, ContentBox } from "Components/Common";
 
 const ShippingStage: React.FC = () => {
   const navigate = useNavigate();

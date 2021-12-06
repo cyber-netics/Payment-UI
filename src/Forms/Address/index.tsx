@@ -4,16 +4,16 @@ import { Select, Option, Field, Input, InputNumber } from "exo-ui";
 const AddressForm: React.FC = () => (
   <>
     <Field>
-      <Input placeholder="Address" />
+      <Input size="medium" placeholder="Address" />
     </Field>
     <Field>
-      <Input placeholder="Appartment, suit" />
+      <Input size="medium" placeholder="Appartment, suit" />
     </Field>
     <Field>
-      <Input placeholder="City" />
+      <Input size="medium" placeholder="City" />
     </Field>
     <Field>
-      <Select>
+      <Select size="medium">
         <Option key="US" value="US">
           United States
         </Option>
@@ -21,7 +21,7 @@ const AddressForm: React.FC = () => (
           Armenia
         </Option>
       </Select>
-      <Select>
+      <Select size="medium">
         <Option key="US" value="US">
           California
         </Option>
@@ -29,7 +29,7 @@ const AddressForm: React.FC = () => (
           Alabama
         </Option>
       </Select>
-      <InputNumber placeholder="Zip code" />
+      <InputNumber size="medium" placeholder="Zip code" />
     </Field>
   </>
 );

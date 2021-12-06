@@ -9,14 +9,14 @@ const ExtraSpace = styled.div`
 const ContactForm: React.FC = () => (
   <>
     <Field>
-      <Input placeholder="First name" />
-      <Input placeholder="Last name" />
+      <Input size="medium" placeholder="First name" />
+      <Input size="medium" placeholder="Last name" />
     </Field>
     <Field>
-      <InputEmail placeholder="Email" />
+      <InputEmail size="medium" placeholder="Email" />
     </Field>
     <Field>
-      <InputNumber placeholder="Phone number" />
+      <InputNumber size="medium" placeholder="Phone number" />
     </Field>
     <Field>
       <ExtraSpace>

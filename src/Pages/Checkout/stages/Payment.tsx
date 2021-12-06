@@ -3,10 +3,11 @@ import { FormEvent } from "types";
 import { StripeApi, StripeElem, Elems } from "Api/stripe";
 import { Elements, ElementsConsumer } from "@stripe/react-stripe-js";
 
-import { Section, ContentBox, OptionBox } from "exo-ui";
+import { Section } from "exo-ui";
 import { Form } from "Components/Form";
 import PaymentCard from "Components/Payment";
 import { LargeButton } from "Components/Button";
+import { ContentBox, OptionBox } from "Components/Common";
 
 const PaymentStage: React.FC = () => {
   const handleSubmit = (event: FormEvent, stripe: StripeElem, elems: Elems) => {

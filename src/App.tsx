@@ -6,8 +6,8 @@ import AuthPage from "./Pages/Auth";
 const App: React.FC = () => {
   return (
     <Routes>
-      <Route path={"checkout/*"} element={<CheckoutPage />} />
-      <Route path={"auth/*"} element={<AuthPage />} />
+      <Route path={"/checkout//*"} element={<CheckoutPage />} />
+      <Route path={"auth//*"} element={<AuthPage />} />
     </Routes>
   );
 };
