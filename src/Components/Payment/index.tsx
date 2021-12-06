@@ -1,23 +1,26 @@
 import React from "react";
-import { Wrapper } from "./styles";
-import { Card, Field } from "exo-ui";
-import { CardNumber, CardName, CardExpiry, CardCvc } from "./elems";
+import { Card } from "exo-ui";
+import CardForm from "./cardForm";
+import CardList, { ICard } from "./cardList";
 
-const PaymentCard: React.FC = () => {
+interface PaymentCardProps {
+  cards?: ICard[];
+}
+
+const PaymentCard: React.FC<PaymentCardProps> = ({ cards }) => {
+  const hasSavedCards = cards && cards.length;
+
   return (
     <Card title="Cardit Card">
-      <Wrapper>
-        <Field>
-          <CardNumber />
-        </Field>
-        <Field>
-          <CardName />
-        </Field>
-        <Field>
-          <CardExpiry />
-          <CardCvc />
-        </Field>
-      </Wrapper>
+      {!hasSavedCards ? (
+        <>
+          <CardForm />
+        </>
+      ) : (
+        <>
+          <CardList cards={cards} />
+        </>
+      )}
     </Card>
   );
 };

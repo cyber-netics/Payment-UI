@@ -56,7 +56,14 @@ const PaymentStage: React.FC = () => {
             </Section>
 
             <Section title="Payment">
-              <PaymentCard />
+              <PaymentCard
+                cards={
+                  [
+                    // { cardType: "visa", cardNumber: "1234", cardExpiry: "05/15" },
+                    // { cardType: "visa", cardNumber: "1234", cardExpiry: "05/15" },
+                  ]
+                }
+              />
             </Section>
 
             <Section title="Billing address">
