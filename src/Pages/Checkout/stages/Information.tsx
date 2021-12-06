@@ -5,7 +5,7 @@ import { Section } from "exo-ui";
 
 import ContactForm from "../../../Forms/Contact";
 import AddressForm from "../../../Forms/Address";
-import { LargeButton } from "Components/Button";
+import { LargeButton } from "Components/Common";
 import { Form, FormItem } from "Components/Form";
 
 const InformationStage: React.FC = () => {

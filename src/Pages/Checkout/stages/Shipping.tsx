@@ -2,7 +2,7 @@ import React from "react";
 import { FormEvent } from "types";
 import { useNavigate } from "react-router-dom";
 import { Section } from "exo-ui";
-import { LargeButton } from "Components/Button";
+import { LargeButton } from "Components/Common";
 import { Form } from "Components/Form";
 import { OptionBox, ContentBox } from "Components/Common";
 

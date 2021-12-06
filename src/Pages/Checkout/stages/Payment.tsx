@@ -6,7 +6,7 @@ import { Elements, ElementsConsumer } from "@stripe/react-stripe-js";
 import { Section } from "exo-ui";
 import { Form } from "Components/Form";
 import PaymentCard from "Components/Payment";
-import { LargeButton } from "Components/Button";
+import { LargeButton } from "Components/Common";
 import { ContentBox, OptionBox } from "Components/Common";
 
 const PaymentStage: React.FC = () => {
